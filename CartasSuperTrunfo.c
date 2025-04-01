@@ -1,22 +1,45 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+// Estrutura para armazenar os dados de uma cidade
+typedef struct {
+    int codigo;
+    char nome[50];
+    int populacao;
+    float area;
+    float pib;
+    int pontos_turisticos;
+} Cidade;
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    Cidade cidade;
 
+    // Entrada de dados
+    printf("Digite o código da cidade: ");
+    scanf("%d", &cidade.codigo);
+
+    printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]", cidade.nome);
+
+    printf("Digite a população da cidade: ");
+    scanf("%d", &cidade.populacao);
+
+    printf("Digite a área da cidade (em km²): ");
+    scanf("%f", &cidade.area);
+
+    printf("Digite o PIB da cidade (em bilhões): ");
+    scanf("%f", &cidade.pib);
+
+    printf("Digite o número de pontos turísticos: ");
+    scanf("%d", &cidade.pontos_turisticos);
+
+    // Exibição dos dados cadastrados
+    printf("\n--- Dados da Cidade ---\n");
+    printf("Código: %d\n", cidade.codigo);
+    printf("Nome: %s\n", cidade.nome);
+    printf("População: %d habitantes\n", cidade.populacao);
+    printf("Área: %.2f km²\n", cidade.area);
+    printf("PIB: %.2f bilhões\n", cidade.pib);
+    printf("Pontos Turísticos: %d\n", cidade.pontos_turisticos);
+    
     return 0;
 }
